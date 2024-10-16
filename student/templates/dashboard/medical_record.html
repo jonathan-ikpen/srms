@@ -1,0 +1,16 @@
+{% extends 'dashboard/base.html' %}
+
+{% block content %}
+    <section class="student-info">
+        <h2>Medical Record</h2>
+        <div class="student-info-fields">
+            <p class="column"><strong>Blood Group:</strong> <span>{{ request.user.student.blood_group }}</span></p>
+            <p class="column"><strong>Blood Type:</strong> <span>{{ request.user.student.blood_type }}</span></p>
+            <p class="column"><strong>Height:</strong> <span>{{ request.user.student.height }}</span></p>
+            <p class="column"><strong>Weight:</strong> <span>{{ request.user.student.weight }}</span></p>
+            <p class="column"><strong>Allergies:</strong> <span>{{ request.user.student.allergies }}</span></p>
+            <p class="column"><strong>Medical Condition:</strong> <span>{{ request.user.student.medical_condition }}</span></p>
+            <p class="column"><strong>Current Medication:</strong> <span>{{ request.user.student.current_medication }}</span></p>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam Record</title>
+    <style>
+        /* Add any styles you want for the PDF here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Exam Record for {{ user.first_name }} {{ user.last_name }}</h2>
+    <p><strong>TGP:</strong> {{ user.student.tgp }}</p>
+    <p><strong>GP:</strong> {% if user.student.gpa_second_semester %}{{ user.student.gpa_second_semester }}{% else %}{{ user.student.gpa_first_semester }}{% endif %}</p>
+    <p><strong>CGPA:</strong> {% if user.student.gpa_second_semester %}{{ user.student.cgpa }}{% endif %}</p>
+    <p><strong>Remark:</strong> {{ user.student.result_remark }}</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Course</th>
+                <th>Unit</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for score in course_scores %}
+                <tr>
+                    <td>{{ score.course.name }}</td>
+                    <td>{{ score.course.unit }}</td>
+                    <td>{{ score.score }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="3">No course scores available.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

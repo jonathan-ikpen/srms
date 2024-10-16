@@ -1,0 +1,16 @@
+{% extends 'dashboard/base.html' %}
+
+{% block content %}
+    <section class="performance-info">
+        <h2>Performance Information</h2>
+        <div class="performance-content">
+            <p class="column"><strong>Attendance:</strong> <span>{{ request.user.student.attendance_percentage }}%</span></p>
+            <div class="attendance-bar">
+                <div class="attendance-progress" style="--width: {{ request.user.student.attendance_percentage }}%;" data-width="{{ request.user.student.attendance_percentage }}"></div>
+            </div>
+            <p class="column"><strong>1st Semester GP:</strong> <span>{{ request.user.student.gpa_first_semester }}</span></p>
+            <p class="column"><strong>2nd Semester GP:</strong> <span>{{ request.user.student.gpa_second_semester }}</span></p>
+            <p class="column"><strong>CGPA:</strong> <span>{{ request.user.student.cgpa }}</span></p>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    /* font-family: Arial, sans-serif; */
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f3ef;
+}
+.container-dashboard {
+    padding-top: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+.sidebar {
+    width: 250px;
+    background-color: #f4f3ef;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.main-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.content-container {
+    flex: 1;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.nav-links {
+    list-style-type: none;
+}
+.nav-links li {
+    margin-bottom: 10px;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+}
+.student-info, .performance-info {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.attendance-bar {
+    background-color: #e0e0e0;
+    height: 7px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+.attendance-progress {
+    background-color: #f17e5d;
+    height: 100%;
+    /* width: 75%; Example value */
+    width: var(--width); /* Example value */
+}
+button, .btn {
+    background-color: #f17e5d;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover, .btn:hover {
+    background-color: #f17e6f;
+}
+.btn {
+    text-decoration: none;
+    font-size: small;
+    text-align: center;
+    display: block;
+    width: 100%;
+    font-weight: normal;
+}
+.photo-container {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 10px;
+}
+.photo-container-pic-form img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+.photo-container-pic-form form {
+    width: 100%;
+}
+.photo-container-pic-form form button {
+    width: 100%;
+}
+
+/* Student Info Page */
+.student-info-fields {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.column {
+    display: flex;
+    gap: 20px;
+}
+.column strong {
+    width: 150px;
+}
+
+
+/* Performance Record Page */
+.performance-content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Exam Records Page */
+table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    border-radius: 10px;
+    /* width: 300px; */
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding: 10px;
+  }
+  
+  th {
+    background-color: #cccccc;
+    text-align: left;
+  }
+  
+
+tr:hover {
+    background-color: #e4dddc;
+}
+@media (max-width: 768px) {
+    .container-dashboard {
+        flex-direction: column;
+    }
+    .sidebar, .main-content, .user-profile {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .sidebar {
+        display: none;
+        background-color: #fff;
+    }
+    .sidebar.active {
+        display: block;
+    }
+    .nav-links {
+        flex-direction: column;
+    }
+    .nav-links li {
+        margin-bottom: 10px;
+    }
+    .main-content {
+        flex-direction: column;
+    }
+    .main-content .content-container {
+        order: 2;
+    }
+    .main-content .photo-container {
+        order: 1;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+    }
+    .photo-container .photo-container-pic-form {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .photo-container .photo-container-pic-form img {
+        width: 100px;
+        height: auto;
+    }
+    .photo-container .photo-container-pic-form form {
+        width: fit-content;
+        align-self: end;
+    }
+}

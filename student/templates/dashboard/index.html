@@ -1,0 +1,27 @@
+{% extends 'dashboard/base.html' %}
+
+{% block content %}
+    <section class="student-info">
+        <h2>Personal Information</h2>
+        <div class="student-info-fields">
+            <p class="column"><strong>Name:</strong> <span>{{ request.user.first_name }} {{ request.user.last_name }}</span></p>
+            <p class="column"><strong>Username:</strong> <span>{{ request.user.username }}</span></p>
+            <p class="column"><strong>Email:</strong> <span>{{ request.user.email }}</span></p>
+            <p class="column"><strong>Phone:</strong> <span>{{ request.user.student.phone_number }}</span></p>
+            <p class="column"><strong>Date of Birth:</strong> <span>{{ request.user.student.date_of_birth }}</span></p>
+            <p class="column"><strong>Marital Status:</strong> <span>{{ request.user.student.marital_status }}</span></p>
+        </div>
+    </section>
+    <section class="student-info">
+        <h2>Academic Information</h2>
+        <div class="student-info-fields">
+            <p class="column"><strong>Matric no:</strong> <span>{{ request.user.student.matric_no }}</span></p>
+            <p class="column"><strong>Department:</strong> <span>{{ request.user.student.department }}</span></p>
+            <p class="column"><strong>Faculty:</strong> <span>{{ request.user.student.faculty }}</span></p>
+            <p class="column"><strong>Level:</strong> <span>{{ request.user.student.level }}</span></p>
+            <p class="column"><strong>Study Mode:</strong> <span>{{ request.user.student.study_mode }}</span></p>
+            <p class="column"><strong>Hostel:</strong> <span>{{ request.user.student.hall_of_residence }}</span></p>
+            <p class="column"><strong>Room no:</strong> <span>{{ request.user.student.room_number }}</span></p>
+        </div>
+    </section>
+{% endblock %}

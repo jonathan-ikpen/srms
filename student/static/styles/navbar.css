@@ -1,0 +1,54 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.navbar a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #222;
+}
+
+.navbar a:hover {
+    color: #f17e5d;
+}
+
+
+.logo img {
+    width: 50px;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 50px;
+}
+
+.mobile {
+    display: none;
+}
+.hidden {
+    display: none !important;
+}
+.show {
+    display: block !important;
+}
+
+@media (max-width: 768px) {
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+    .hamburger {
+        display: block;
+    }
+}

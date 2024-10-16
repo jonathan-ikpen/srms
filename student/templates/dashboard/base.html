@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'styles/dashboard2.css' %}">
+</head>
+<body>
+    {% include 'components/navbar.html' %}
+
+    <div class="container-dashboard">
+        <aside class="sidebar">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{% url 'dashboard' %}">Home</a></li>
+                    <li><a href="{% url 'medical_record' %}">Medical Record</a></li>
+                    <li><a href="{% url 'exam_record' %}">Exam Record</a></li>
+                    <li><a href="{% url 'performance_track' %}">Performance Track</a></li>
+                </ul>
+            </nav>
+            <form action="{% url 'logout' %}" method="POST">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+            </form>
+        </aside>
+        <main class="main-content">
+            <div class="content-container">
+                {% block content %}
+                {% endblock %}
+            </div>
+            <div class="photo-container">
+                <div class="photo-container-pic-form">
+                    <img src="{% if request.user.student.profile_picture %}{{ request.user.student.profile_picture.url }}{% else %}{% static 'images/girl.webp' %}{% endif %}" alt="photo">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        {% block button %}
+                        {% endblock %}
+                        <!-- <button type="submit">Download Transcript</button> -->
+                    </form>
+                </div>
+                </div>
+        </main>
+    </div>
+    <script>
+        function toggleHamburger() {
+            var button = document.querySelector('.hamburger');
+            if (button.innerHTML === '+') {
+                button.innerHTML = '-';
+            } else {
+                button.innerHTML = '+';
+            }
+        }
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            toggleHamburger();
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
