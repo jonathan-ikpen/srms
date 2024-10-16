@@ -15,6 +15,7 @@ class Student(models.Model):
     ]
 
     HALL_CHOICES = [
+        ('NONE', 'NONE'),
         ('PTDF', 'PTDF'),
         ('NOBLE', 'Noble'),
         ('OLD', 'Old'),
@@ -38,11 +39,11 @@ class Student(models.Model):
     gpa_second_semester = models.DecimalField(max_digits=4, decimal_places=2, null=True, blank=True)
     attendance_percentage = models.DecimalField(max_digits=4, decimal_places=2, null=True, blank=True)
     # Personal Information
-    surname = models.CharField(max_length=100, null=True, blank=True)
+    # surname = models.CharField(max_length=100, null=True, blank=True)
+    # email = models.EmailField(max_length=100, null=True, blank=True)
     other_names = models.CharField(max_length=100, null=True, blank=True)
     maiden_name = models.CharField(max_length=100, null=True, blank=True)
     phone_number = models.CharField(max_length=100, null=True, blank=True)
-    email = models.EmailField(max_length=100, null=True, blank=True)
     date_of_birth = models.DateField(null=True, blank=True)
     gender = models.CharField(max_length=10, null=True, blank=True)
     nationality = models.CharField(max_length=100, null=True, blank=True)

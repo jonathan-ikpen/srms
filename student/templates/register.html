@@ -12,6 +12,7 @@
 
     <div class="container">
         <h1>Register</h1>
+        <p class="small">*Use your firstname and lastname or matric number as username</p>
         <div class="form-container">
             <form action="{% url 'register' %}" enctype="multipart/form-data" method="POST">
                 {% csrf_token %}

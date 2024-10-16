@@ -12,7 +12,7 @@ class RegisterForm(forms.ModelForm):
     confirm_password = forms.CharField(widget=forms.PasswordInput, label="Confirm Password")
 
     # Additional fields from the Student model
-    surname = forms.CharField(max_length=100, required=True)
+    # surname = forms.CharField(max_length=100, required=True)
     other_names = forms.CharField(max_length=100, required=True)
     phone_number = forms.CharField(max_length=100, required=True)
     date_of_birth = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), required=True)
@@ -33,7 +33,7 @@ class RegisterForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['username', 'first_name', 'last_name', 'matric_no', 'email', 'password', 'confirm_password', 'surname', 'other_names', 'phone_number', 'date_of_birth', 'gender', 'nationality', 'state_of_origin', 'local_government_area', 'home_address','marital_status', 'profile_picture', 'hall_of_residence', 'department', 'faculty', 'level', 'study_mode']
+        fields = ['username', 'first_name', 'last_name', 'matric_no', 'email', 'password', 'confirm_password', 'other_names', 'phone_number', 'date_of_birth', 'gender', 'nationality', 'state_of_origin', 'local_government_area', 'home_address','marital_status', 'profile_picture', 'hall_of_residence', 'department', 'faculty', 'level', 'study_mode']
 
     def clean(self):
         cleaned_data = super().clean()
