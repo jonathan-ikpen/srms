@@ -120,6 +120,13 @@ button:hover {
     color: #666;
     /* display: none; */
 }
+.small {
+    font-size: 12px;
+    color: #666;
+}
+.small span {
+    color: #f17e5d;
+}
 
 .form-container form p  {
     margin: 0;
